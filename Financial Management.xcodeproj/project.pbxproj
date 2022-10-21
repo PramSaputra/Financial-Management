@@ -8,21 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		A535CDD828EBEBC9000E6049 /* Financial_ManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDD728EBEBC9000E6049 /* Financial_ManagementApp.swift */; };
-		A535CDDA28EBEBC9000E6049 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDD928EBEBC9000E6049 /* ContentView.swift */; };
+		A535CDDA28EBEBC9000E6049 /* DashboardStartUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDD928EBEBC9000E6049 /* DashboardStartUpView.swift */; };
 		A535CDDC28EBEBC9000E6049 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A535CDDB28EBEBC9000E6049 /* Assets.xcassets */; };
 		A535CDDF28EBEBC9000E6049 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A535CDDE28EBEBC9000E6049 /* Preview Assets.xcassets */; };
 		A535CDE128EBEBC9000E6049 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDE028EBEBC9000E6049 /* Persistence.swift */; };
 		A535CDE428EBEBC9000E6049 /* Financial_Management.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A535CDE228EBEBC9000E6049 /* Financial_Management.xcdatamodeld */; };
+		A535CDED28ED2129000E6049 /* MonthlyIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDEC28ED2129000E6049 /* MonthlyIncomeView.swift */; };
+		A535CDEF28ED802B000E6049 /* LimitExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDEE28ED802A000E6049 /* LimitExpensesView.swift */; };
+		A535CDF128EE8A2E000E6049 /* IncomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDF028EE8A2E000E6049 /* IncomeViewModel.swift */; };
+		A5E5923728F464370081F937 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5923628F464370081F937 /* MainView.swift */; };
+		A5E5924928FF88810081F937 /* ExpensesHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5924828FF88810081F937 /* ExpensesHistoryView.swift */; };
+		A5E5924B28FF8C580081F937 /* ExpensesItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5924A28FF8C580081F937 /* ExpensesItemViewModel.swift */; };
+		A5E5924D28FF8D380081F937 /* ExpenseSaveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5924C28FF8D380081F937 /* ExpenseSaveViewModel.swift */; };
+		A5E5924F28FF8DC60081F937 /* ExpensesAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5924E28FF8DC60081F937 /* ExpensesAddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A535CDD428EBEBC9000E6049 /* Financial Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Financial Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A535CDD728EBEBC9000E6049 /* Financial_ManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Financial_ManagementApp.swift; sourceTree = "<group>"; };
-		A535CDD928EBEBC9000E6049 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A535CDD928EBEBC9000E6049 /* DashboardStartUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStartUpView.swift; sourceTree = "<group>"; };
 		A535CDDB28EBEBC9000E6049 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A535CDDE28EBEBC9000E6049 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A535CDE028EBEBC9000E6049 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A535CDE328EBEBC9000E6049 /* Financial_Management.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Financial_Management.xcdatamodel; sourceTree = "<group>"; };
+		A535CDEC28ED2129000E6049 /* MonthlyIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyIncomeView.swift; sourceTree = "<group>"; };
+		A535CDEE28ED802A000E6049 /* LimitExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitExpensesView.swift; sourceTree = "<group>"; };
+		A535CDF028EE8A2E000E6049 /* IncomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewModel.swift; sourceTree = "<group>"; };
+		A5E5923628F464370081F937 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A5E5924828FF88810081F937 /* ExpensesHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesHistoryView.swift; sourceTree = "<group>"; };
+		A5E5924A28FF8C580081F937 /* ExpensesItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesItemViewModel.swift; sourceTree = "<group>"; };
+		A5E5924C28FF8D380081F937 /* ExpenseSaveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSaveViewModel.swift; sourceTree = "<group>"; };
+		A5E5924E28FF8DC60081F937 /* ExpensesAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesAddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +71,9 @@
 		A535CDD628EBEBC9000E6049 /* Financial Management */ = {
 			isa = PBXGroup;
 			children = (
+				A535CDF228EE97E8000E6049 /* View */,
+				A535CDF328EE9835000E6049 /* ViewModel */,
 				A535CDD728EBEBC9000E6049 /* Financial_ManagementApp.swift */,
-				A535CDD928EBEBC9000E6049 /* ContentView.swift */,
 				A535CDDB28EBEBC9000E6049 /* Assets.xcassets */,
 				A535CDE028EBEBC9000E6049 /* Persistence.swift */,
 				A535CDE228EBEBC9000E6049 /* Financial_Management.xcdatamodeld */,
@@ -71,6 +88,29 @@
 				A535CDDE28EBEBC9000E6049 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A535CDF228EE97E8000E6049 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A535CDD928EBEBC9000E6049 /* DashboardStartUpView.swift */,
+				A535CDEC28ED2129000E6049 /* MonthlyIncomeView.swift */,
+				A535CDEE28ED802A000E6049 /* LimitExpensesView.swift */,
+				A5E5923628F464370081F937 /* MainView.swift */,
+				A5E5924828FF88810081F937 /* ExpensesHistoryView.swift */,
+				A5E5924E28FF8DC60081F937 /* ExpensesAddView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A535CDF328EE9835000E6049 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A535CDF028EE8A2E000E6049 /* IncomeViewModel.swift */,
+				A5E5924A28FF8C580081F937 /* ExpensesItemViewModel.swift */,
+				A5E5924C28FF8D380081F937 /* ExpenseSaveViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,8 +184,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A535CDE128EBEBC9000E6049 /* Persistence.swift in Sources */,
-				A535CDDA28EBEBC9000E6049 /* ContentView.swift in Sources */,
+				A5E5923728F464370081F937 /* MainView.swift in Sources */,
+				A535CDEF28ED802B000E6049 /* LimitExpensesView.swift in Sources */,
+				A5E5924D28FF8D380081F937 /* ExpenseSaveViewModel.swift in Sources */,
+				A535CDF128EE8A2E000E6049 /* IncomeViewModel.swift in Sources */,
+				A535CDDA28EBEBC9000E6049 /* DashboardStartUpView.swift in Sources */,
 				A535CDE428EBEBC9000E6049 /* Financial_Management.xcdatamodeld in Sources */,
+				A5E5924F28FF8DC60081F937 /* ExpensesAddView.swift in Sources */,
+				A535CDED28ED2129000E6049 /* MonthlyIncomeView.swift in Sources */,
+				A5E5924928FF88810081F937 /* ExpensesHistoryView.swift in Sources */,
+				A5E5924B28FF8C580081F937 /* ExpensesItemViewModel.swift in Sources */,
 				A535CDD828EBEBC9000E6049 /* Financial_ManagementApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
