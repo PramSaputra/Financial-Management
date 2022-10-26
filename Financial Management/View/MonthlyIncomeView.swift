@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MonthlyIncomeView: View {
     @StateObject var ViewModel = incomeViewModel()
- 
+    @ObservedObject var onboard2 : FirstViewModel
+
     var body: some View {
      //   NavigationView{
             VStack{
@@ -27,13 +28,25 @@ struct MonthlyIncomeView: View {
                 Spacer()
                     .frame(height: 50)
                 
-                NavigationLink(("Confirm"), destination: LimitExpensesView(income: ViewModel.monthlyIncome ?? 0))
-                    .padding()
-                    .frame(width: 250)
-                    .background(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 ? Color.gray : Color.orange)
-                    .foregroundColor(.white)
-                    .cornerRadius(20)
-                    .disabled(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == nil)
+                
+                if ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 {
+                    NavigationLink(("Skip"), destination: LimitExpensesView(ViewModel: ViewModel, onboard3: onboard2))
+                        .padding()
+                        .frame(width: 250)
+                        .background(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 ? Color.orange : Color.orange)
+                        .foregroundColor(.white)
+                        .cornerRadius(20)
+                    
+                    
+                } else{
+                    NavigationLink(("Confirm"), destination: LimitExpensesView(ViewModel: ViewModel, onboard3: onboard2))
+                        .padding()
+                        .frame(width: 250)
+                        .background(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 ? Color.gray : Color.orange)
+                        .foregroundColor(.white)
+                        .cornerRadius(20)
+                }
+                
             }.navigationTitle("Monthly Income")
                 
             
@@ -46,6 +59,6 @@ struct MonthlyIncomeView: View {
 
 struct MonthlyIncomeView_Previews: PreviewProvider {
     static var previews: some View {
-        MonthlyIncomeView()
+        MonthlyIncomeView(onboard2: FirstViewModel())
     }
 }

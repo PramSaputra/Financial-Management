@@ -13,7 +13,7 @@ struct Financial_ManagementApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DashboardStartUpView()
+            FirstView(mainOnboard: FirstViewModel())
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

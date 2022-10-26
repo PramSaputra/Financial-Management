@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
-    @AppStorage("Za Warudo") var onboarding = true
-    
-    @StateObject var sisaUang = incomeViewModel()
-    @StateObject var pengeluaran = ExpensesSaveViewModel()
+//    @AppStorage("Za Warudo") var onboarding = true
+    @ObservedObject var sisaUang : incomeViewModel
+    @StateObject var expenses = ExpensesSaveViewModel()
     
     @State var showingAddExpense = false
     
@@ -29,7 +28,7 @@ struct MainView: View {
     }
     
     var totalExpenses: Int{
-        let items = pengeluaran.items
+        let items = expenses.items
         
         var expensesValue = 0
         
@@ -102,7 +101,7 @@ struct MainView: View {
                                     .scaledToFit()
                                     .frame(height: 30)
                             }.sheet(isPresented: $showingAddExpense){
-                                ExpensesAddView(expenses1: pengeluaran, yourOutcome: incomeViewModel())
+                                ExpensesAddView(expenses1: expenses, yourOutcome: incomeViewModel())
                             }
                         }
                         HStack{
@@ -115,7 +114,7 @@ struct MainView: View {
                             .padding()
                             .font(.title2)
                         }
-                        VStack{                                ForEach(pengeluaran.items.prefix(5)) {
+                        VStack{                                ForEach(expenses.items.prefix(5)) {
                             item in
                             HStack{
                                 VStack(alignment: .leading){
@@ -145,6 +144,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(currentIncome: 2000000, limitIncome: 1600000)
+        MainView(sisaUang: incomeViewModel(), currentIncome: 2000000, limitIncome: 1600000)
     }
 }

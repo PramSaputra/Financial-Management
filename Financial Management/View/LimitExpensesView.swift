@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct LimitExpensesView: View {
-    @StateObject var ViewModel = incomeViewModel()
-    let income: Int
+    @ObservedObject var ViewModel : incomeViewModel
+    @ObservedObject var onboard3 : FirstViewModel
+    @State var aktif = false
     @State var limit = 50
     let limitPercentage = [50, 60, 70, 80]
     
     var body: some View {
    //     NavigationView{
+        ZStack{
             VStack{
                 Text("Set Your Monthly Limit Expenses Here")
                 Spacer()
                     .frame(height: 50)
                 
-                Text("Your Monthly Income are Rp \(income)")
+                Text("Your Monthly Income are Rp \(ViewModel.monthlyIncome ?? 0)")
                 
                 TextField("0", value: ($ViewModel.limitExpenses), format:.currency(code:Locale.current.currencyCode ?? "id_ID"))
                     .keyboardType(.numberPad)
@@ -31,10 +33,11 @@ struct LimitExpensesView: View {
                     .foregroundColor(.white)
                     .onAppear{
                         let limitExpensesPercent = limit
-
-                        let limitedExpenses = income / 100 * (limitExpensesPercent )
-                        self.ViewModel.limitExpenses = limitedExpenses;
-                        self.ViewModel.monthlyIncome = income
+                        let income = ViewModel.monthlyIncome
+                        
+                        let limitedExpenses = (income ?? 0) / 100 * (limitExpensesPercent )
+                        
+                        self.ViewModel.limitExpenses = limitedExpenses
                     }
                 
                 Text("Recomendation")
@@ -45,14 +48,20 @@ struct LimitExpensesView: View {
                 }.pickerStyle(.menu)
                     .onChange(of: limit, perform: { (value) in
                         let limitExpensesPercent = limit
-
-                        let limitedExpenses = income / 100 * (limitExpensesPercent )
-                        self.ViewModel.limitExpenses = limitedExpenses;
-                        self.ViewModel.monthlyIncome = income
+                        let income = ViewModel.monthlyIncome
+                        
+                        let limitedExpenses = (income ?? 0) / 100 * (limitExpensesPercent )
+                        
+                        self.ViewModel.limitExpenses = limitedExpenses
                     })
-                
+               
                 Group{
-                    NavigationLink(("Confirm"), destination: MainView(currentIncome: ViewModel.monthlyIncome ?? 0, limitIncome: ViewModel.limitExpenses ?? 0))
+                    
+                    if onboard3.onboard == false {
+                        Button("Confirm", action: {
+                            ViewModel.showPopUp.toggle()
+                            
+                        })
                         .padding()
                         .frame(width: 250)
                         .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color.gray : Color.orange)
@@ -61,18 +70,19 @@ struct LimitExpensesView: View {
                         .padding(50)
                         .disabled(ViewModel.limitExpenses == 0)
                         .disabled(ViewModel.limitExpenses == nil)
+                    }
                 }
-                
-            }.navigationTitle("Limit Expenses")
-       // }.navigationBarHidden(true)
-        
-        
-        
-    }
+            }
+            if ViewModel.showPopUp == true{
+                withAnimation{
+                    AlertConfirmationView(popUp: ViewModel, onboard4: onboard3)
+                }
+            }
+        }.navigationTitle("Limit Expenses")}
 }
 
 struct LimitExpensesView_Previews: PreviewProvider {
     static var previews: some View {
-        LimitExpensesView(income: 100000)
+        LimitExpensesView(ViewModel: incomeViewModel(), onboard3: FirstViewModel())
     }
 }

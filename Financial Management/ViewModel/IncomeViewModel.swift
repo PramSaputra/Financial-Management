@@ -6,11 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class incomeViewModel: ObservableObject {
-    @Published var monthlyIncome : Int? = nil
-    @Published var limitExpenses : Int? = nil
-    @Published var currentExpenses : Int? = nil
-    @Published var onboard : Bool = true
-    
+    @AppStorage ("MonthlyIncome") var monthlyIncome : Int = 0
+    @AppStorage ("LimitExpenses") var limitExpenses : Int = 0
+    @AppStorage ("CurrentExpenses") var currentExpenses : Int = 0
+    @Published var showPopUp : Bool = false
 }
