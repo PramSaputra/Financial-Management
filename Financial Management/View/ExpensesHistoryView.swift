@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ExpensesHistoryView: View {
-    @StateObject var expenses = ExpensesSaveViewModel()
+    @StateObject var expenses : ExpensesSaveViewModel
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
+    }
     var body: some View {
         List{
             ForEach(expenses.items) {
@@ -22,12 +25,16 @@ struct ExpensesHistoryView: View {
                     Text("Rp \(item.expense)")
                 }
             }
+            .onDelete(perform: removeItems)
         }.navigationTitle("Expenses History")
+            .toolbar{
+                EditButton()
+            }
     }
 }
 
 struct ExpensesHistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpensesHistoryView()
+        ExpensesHistoryView(expenses: ExpensesSaveViewModel())
     }
 }

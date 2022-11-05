@@ -8,7 +8,7 @@
 import Foundation
 
 class ExpensesSaveViewModel: ObservableObject{
-    @Published var items = [ExpensesItemViewModel](){
+    @Published var items = [ExpensesItemModel](){
         didSet {
            let encoder = JSONEncoder()
             
@@ -16,11 +16,12 @@ class ExpensesSaveViewModel: ObservableObject{
                UserDefaults.standard.set(encoded, forKey: "Items")
            }
        }
+        
     }
     
     init() {
         if let savedItems = UserDefaults.standard.data(forKey: "Items"){
-            if let decodedItems = try? JSONDecoder().decode([ExpensesItemViewModel].self, from: savedItems) {
+            if let decodedItems = try? JSONDecoder().decode([ExpensesItemModel].self, from: savedItems) {
              items = decodedItems
              return
             }

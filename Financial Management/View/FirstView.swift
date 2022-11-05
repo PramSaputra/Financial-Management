@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct FirstView: View {
-    @StateObject var vm = incomeViewModel()
+    @StateObject var vm = incomeModel()
     @StateObject var mainOnboard = FirstViewModel()
     
     var body: some View{
         if mainOnboard.onboard == false {
-            DashboardStartUpView(onboard1: mainOnboard)
+            DashboardStartUpView(onboard1: mainOnboard, incomeViewModel: vm)
         } else {
             MainView(sisaUang: vm, currentIncome: vm.monthlyIncome ?? 0, limitIncome: vm.limitExpenses ?? 0)
         }

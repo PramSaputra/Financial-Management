@@ -12,6 +12,7 @@ import CoreData
 
 struct DashboardStartUpView: View {
     @ObservedObject var onboard1 : FirstViewModel
+    @ObservedObject var incomeViewModel : incomeModel
     
     var body: some View {
         NavigationView {
@@ -29,10 +30,11 @@ struct DashboardStartUpView: View {
                 Spacer()
                     .frame(height: 20)
                 
-                NavigationLink(("Let's Get Started"), destination: MonthlyIncomeView(onboard2: onboard1))
+                NavigationLink(("Let's Get Started"), destination: MonthlyIncomeView(ViewModel: incomeViewModel, onboard2: onboard1))
                     .padding()
                     .background(.orange)
                     .foregroundColor(.white)
+                    .cornerRadius(20)
             }.navigationTitle("Dashboard")
         }
     }
@@ -40,6 +42,6 @@ struct DashboardStartUpView: View {
 
 struct DashboardStartUpView_Previews: PreviewProvider {
     static var previews: some View {
-        DashboardStartUpView(onboard1: FirstViewModel())
+        DashboardStartUpView(onboard1: FirstViewModel(), incomeViewModel: incomeModel())
     }
 }

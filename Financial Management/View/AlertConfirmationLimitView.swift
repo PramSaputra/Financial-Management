@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct AlertConfirmationView: View {
-    @ObservedObject var popUp : incomeViewModel
+struct AlertConfirmationLimitView: View {
+    @ObservedObject var popUp2 : incomeModel
     @ObservedObject var onboard4 : FirstViewModel
     var body: some View {
         ZStack{
 //            NavigationLink("", destination: MainView(sisaUang: popUp, currentIncome: popUp.monthlyIncome, limitIncome: popUp.limitExpenses), isActive: $onboard4.onboard)
-            if popUp.showPopUp == true {
+            if popUp2.showPopUp2{
                 ZStack {
                     Color.white
                         VStack {
@@ -21,20 +21,23 @@ struct AlertConfirmationView: View {
                                 .frame(height: 50)
                             Text("Is This All Correct?")
                             Spacer()
-                                .frame(height: 50)
+                            Text("Your Limit Expenses are \(popUp2.limitExpenses ?? 0)")
+                                .frame(height: 70)
                             Divider()
                             HStack{
+                                Spacer()
                                 VStack{
                                     Button(action: {
                                         withAnimation{
-                                            self.popUp.showPopUp = false
+                                            self.popUp2.showPopUp2 = false
+                                            self.popUp2.limitExpenses = popUp2.limitExpenses
                                         }
                                         
                                     }, label: {
                                         Text("Close")
                                     })
-                                }.padding()
-                                    .background(.gray)
+                                }.foregroundColor(.red)
+                                .cornerRadius(20)
                                 Spacer()
                                 Divider()
                                 Spacer()
@@ -42,17 +45,14 @@ struct AlertConfirmationView: View {
                                     ZStack{
                                         Button("Confirm", action: {
                                             withAnimation{
-                                            onboard4.onboard.toggle()
+                                                onboard4.onboard.toggle()
                                         }
                                     })
                                 }
-                            }.padding()
-                                    .background((popUp.limitExpenses == 0 || popUp.limitExpenses == nil) ? Color.gray : Color.orange)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(20)
-                                    .padding()
+                            }.cornerRadius(20)
+                                    Spacer()
                             }
-                        }.padding()
+                        }
                 }
                 .frame(width: 300, height: 200)
                 .cornerRadius(20).shadow(radius: 20)
@@ -63,6 +63,6 @@ struct AlertConfirmationView: View {
 
 struct AlertConfirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        AlertConfirmationView(popUp: incomeViewModel(), onboard4: FirstViewModel())
+        AlertConfirmationLimitView(popUp2: incomeModel(), onboard4: FirstViewModel())
     }
 }
