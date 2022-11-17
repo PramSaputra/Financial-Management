@@ -21,6 +21,7 @@
 		A535CDED28ED2129000E6049 /* MonthlyIncomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDEC28ED2129000E6049 /* MonthlyIncomeView.swift */; };
 		A535CDEF28ED802B000E6049 /* LimitExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDEE28ED802A000E6049 /* LimitExpensesView.swift */; };
 		A535CDF128EE8A2E000E6049 /* IncomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535CDF028EE8A2E000E6049 /* IncomeModel.swift */; };
+		A57686D029247B1800A4C53B /* NavigationBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57686CF29247B1800A4C53B /* NavigationBarViewModel.swift */; };
 		A5E5923728F464370081F937 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5923628F464370081F937 /* MainView.swift */; };
 		A5E5924928FF88810081F937 /* ExpensesHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5924828FF88810081F937 /* ExpensesHistoryView.swift */; };
 		A5E5924B28FF8C580081F937 /* ExpensesItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E5924A28FF8C580081F937 /* ExpensesItemModel.swift */; };
@@ -44,6 +45,7 @@
 		A535CDEC28ED2129000E6049 /* MonthlyIncomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyIncomeView.swift; sourceTree = "<group>"; };
 		A535CDEE28ED802A000E6049 /* LimitExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitExpensesView.swift; sourceTree = "<group>"; };
 		A535CDF028EE8A2E000E6049 /* IncomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeModel.swift; sourceTree = "<group>"; };
+		A57686CF29247B1800A4C53B /* NavigationBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarViewModel.swift; sourceTree = "<group>"; };
 		A5E5923628F464370081F937 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		A5E5924828FF88810081F937 /* ExpensesHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesHistoryView.swift; sourceTree = "<group>"; };
 		A5E5924A28FF8C580081F937 /* ExpensesItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesItemModel.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				A535CDF228EE97E8000E6049 /* View */,
 				A535CDF328EE9835000E6049 /* ViewModel */,
 				A535CDD728EBEBC9000E6049 /* Financial_ManagementApp.swift */,
+				A57686CF29247B1800A4C53B /* NavigationBarViewModel.swift */,
 				A535CDDB28EBEBC9000E6049 /* Assets.xcassets */,
 				A535CDE028EBEBC9000E6049 /* Persistence.swift */,
 				A535CDE228EBEBC9000E6049 /* Financial_Management.xcdatamodeld */,
@@ -208,6 +211,7 @@
 			files = (
 				A535CDE128EBEBC9000E6049 /* Persistence.swift in Sources */,
 				A5E5923728F464370081F937 /* MainView.swift in Sources */,
+				A57686D029247B1800A4C53B /* NavigationBarViewModel.swift in Sources */,
 				A535CDEF28ED802B000E6049 /* LimitExpensesView.swift in Sources */,
 				A5E5924D28FF8D380081F937 /* ExpenseSaveViewModel.swift in Sources */,
 				A535CDF128EE8A2E000E6049 /* IncomeModel.swift in Sources */,

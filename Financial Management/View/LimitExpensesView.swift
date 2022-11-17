@@ -17,6 +17,12 @@ struct LimitExpensesView: View {
     var body: some View {
    //     NavigationView{
         ZStack{
+            ZStack {
+//                GeometryReader { reader in
+//                    Color("Primary")
+//                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
+//                        .ignoresSafeArea()
+//                }
             if ViewModel.showPopUp2 == true{
             VStack{
                 Text("Set Your Monthly Limit Expenses Here")
@@ -29,9 +35,8 @@ struct LimitExpensesView: View {
                     .keyboardType(.numberPad)
                     .padding()
                     .frame(width: 250)
-                    .background(.gray)
+                    .background(.quaternary)
                     .cornerRadius(20)
-                    .foregroundColor(.white)
 //                    .onAppear{
 //                        let limitExpensesPercent = limit
 //                        let income = ViewModel.monthlyIncome
@@ -60,7 +65,8 @@ struct LimitExpensesView: View {
                     ForEach(limitPercentage, id: \.self){                        Text("Limit \($0)% of Your Income")
                     }
                 }
-//                .pickerStyle(.menu)
+                .pickerStyle(.segmented)
+//                .background(Color("Third"))
 //                    .onChange(of: limit, perform: { (value) in
 //                        let limitExpensesPercent = limit
 //                        let income = ViewModel.monthlyIncome
@@ -92,7 +98,7 @@ struct LimitExpensesView: View {
                         })
                         .padding()
                         .frame(width: 250)
-                        .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color.gray : Color.orange)
+                        .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color.gray : Color("Primary"))
                         .foregroundColor(.white)
                         .cornerRadius(20)
                         .padding(50)
@@ -115,9 +121,8 @@ struct LimitExpensesView: View {
                         .keyboardType(.numberPad)
                         .padding()
                         .frame(width: 250)
-                        .background(.gray)
+                        .background(.quaternary)
                         .cornerRadius(20)
-                        .foregroundColor(.white)
                         .onAppear{
                             let limitExpensesPercent = limit
                             let income = ViewModel.monthlyIncome
@@ -142,11 +147,15 @@ struct LimitExpensesView: View {
                         }
                     
                     Text("Recomendation")
-                    
-                    Picker("Select Your Limit", selection: $limit) {
-                        ForEach(limitPercentage, id: \.self){                        Text("Limit \($0)% of Your Income")
+                    HStack{
+                        Picker("Select Your Limit", selection: $limit) {
+                            ForEach(limitPercentage, id: \.self){                        Text(" \($0)% ")
+                            }
                         }
-                    }.pickerStyle(.menu)
+                    }
+                    .pickerStyle(.segmented)
+//                    .background(Color("Third"))
+                    
                         .onChange(of: limit, perform: { (value) in
                             let limitExpensesPercent = limit
                             let income = ViewModel.monthlyIncome
@@ -180,7 +189,7 @@ struct LimitExpensesView: View {
                             })
                             .padding()
                             .frame(width: 250)
-                            .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color.gray : Color.orange)
+                            .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color.gray : Color("Primary"))
                             .foregroundColor(.white)
                             .cornerRadius(20)
                             .padding(50)
@@ -193,6 +202,7 @@ struct LimitExpensesView: View {
             if ViewModel.showPopUp2 == true{
                     AlertConfirmationLimitView(popUp2: ViewModel, onboard4: onboard3)
             }
+        }
         }
     }
 }

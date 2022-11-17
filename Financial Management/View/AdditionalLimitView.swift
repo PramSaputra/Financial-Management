@@ -15,9 +15,18 @@ struct AdditionalLimitView: View {
     @State var totalLimit : Int?
     let currentMonthlyIncome : Int
     
+//    init (income: incomeModel, currentMonthlyIncome: Int){
+//        UINavigationBar().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.red)]
+//        self.income = income
+//        self.currentMonthlyIncome = currentMonthlyIncome
+//    }
+    
     var body: some View {
         NavigationView{
             Form{
+                Section{
+                    
+                }
                 HStack{
                     Text("Your Starting Monthly Income are")
                     Divider()
@@ -96,9 +105,17 @@ struct AdditionalIncomeView: View {
     @State var alert = false
     @Environment(\.dismiss) var dismiss
     
+//    init (income: incomeModel){
+//        UINavigationBar().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.red)]
+//        self.income = income
+//    }
+    
     var body: some View {
         NavigationView{
             Form{
+                Section{
+                    
+                }
                 Text("Your Limit Expenses are \(income.limitExpenses ?? 0)")
                 TextField("\(income.monthlyIncome ?? 0)", value: $updatedIncome, format:.currency(code: Locale.current.currencyCode ?? "id_ID"))
                     .keyboardType(.numberPad)

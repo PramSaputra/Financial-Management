@@ -18,11 +18,16 @@ struct AlertMonthlyIncomeView: View{
                     Color.white
                         VStack {
                             Spacer()
-                                .frame(height: 50)
+                                .frame(height: 30)
                             Text("Double Check Your Monthly Income")
+                                .foregroundColor(.black)
+                                .font(Font.body.bold())
                             Spacer()
+                                .frame(height: 5)
                             Text("Your Monthly Income are \(popUp1.monthlyIncome ?? 0)")
-                                .frame(height: 70)
+                                .foregroundColor(.black)
+                            Spacer()
+                                .frame(height: 30)
                             Divider()
                             HStack{
                                 Spacer()
@@ -43,13 +48,13 @@ struct AlertMonthlyIncomeView: View{
                                 VStack{
                                     ZStack{
                                         NavigationLink(("Confirm"), destination: LimitExpensesView(ViewModel: popUp1, onboard3: onboard5))
-                                }
+                                    }.foregroundColor(Color("Primary"))
                             }.cornerRadius(20)
                                     Spacer()
                             }
                         }
                 }
-                .frame(width: 300, height: 200)
+                .frame(width: 300, height: 160)
                 .cornerRadius(20).shadow(radius: 20)
             }
         }

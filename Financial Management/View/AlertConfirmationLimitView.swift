@@ -18,11 +18,16 @@ struct AlertConfirmationLimitView: View {
                     Color.white
                         VStack {
                             Spacer()
-                                .frame(height: 50)
-                            Text("Is This All Correct?")
+                                .frame(height: 30)
+                            Text("Double Check Your Monthly Expenses")
+                                .foregroundColor(.black)
+                                .font(Font.body.bold())
                             Spacer()
+                                .frame(height: 5)
                             Text("Your Limit Expenses are \(popUp2.limitExpenses ?? 0)")
-                                .frame(height: 70)
+                                .foregroundColor(.black)
+                            Spacer()
+                                .frame(height: 30)
                             Divider()
                             HStack{
                                 Spacer()
@@ -48,13 +53,13 @@ struct AlertConfirmationLimitView: View {
                                                 onboard4.onboard.toggle()
                                         }
                                     })
-                                }
+                                    }.foregroundColor(Color("Primary"))
                             }.cornerRadius(20)
                                     Spacer()
                             }
                         }
                 }
-                .frame(width: 300, height: 200)
+                .frame(width: 300, height: 180)
                 .cornerRadius(20).shadow(radius: 20)
             }
         }

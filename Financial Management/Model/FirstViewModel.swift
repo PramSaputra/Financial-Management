@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 class FirstViewModel: ObservableObject{
-    @AppStorage ("Barone Fleur") var onboard : Bool = false
+    @AppStorage ("Barone D Fleur") var onboard : Bool = false
 //    @Published var onboard = false
 }
 

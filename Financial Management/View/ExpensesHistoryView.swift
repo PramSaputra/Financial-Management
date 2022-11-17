@@ -8,28 +8,45 @@
 import SwiftUI
 
 struct ExpensesHistoryView: View {
-    @StateObject var expenses : ExpensesSaveViewModel
+    @ObservedObject var expenses : ExpensesSaveViewModel
     func removeItems(at offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
     }
+//        init (expenses : ExpensesSaveViewModel){
+//            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.black)]
+//            self.expenses = expenses
+//        }
+    
     var body: some View {
-        List{
-            ForEach(expenses.items) {
-                item in
-                HStack{
-                    VStack(alignment: .leading){
-                        Text(item.name)
-                        Text(item.whatFor)
+//        NavigationView{
+//            ZStack{
+                Form{
+                    Section{
+                        
                     }
-                    Spacer()
-                    Text("Rp \(item.expense)")
+                    List{
+                        ForEach(expenses.items) {
+                            item in
+                            HStack{
+                                VStack(alignment: .leading){
+                                    Text(item.name)
+                                    Text(item.whatFor)
+                                }
+                                Spacer()
+                                Text("Rp \(item.expense)")
+                            }
+                        }
+                        .onDelete(perform: removeItems)
+                    }
                 }
+                .navigationTitle("Expenses History")
+                    .toolbar{
+                        EditButton()
+//                    }
+                    
             }
-            .onDelete(perform: removeItems)
-        }.navigationTitle("Expenses History")
-            .toolbar{
-                EditButton()
-            }
+//        }
+//                    .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .systemRed)
     }
 }
 

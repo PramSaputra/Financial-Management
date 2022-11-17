@@ -15,6 +15,12 @@ struct MonthlyIncomeView: View {
      //   NavigationView{
         
         ZStack{
+            ZStack {
+//                GeometryReader { reader in
+//                    Color("Primary")
+//                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
+//                        .ignoresSafeArea()
+//                }
             if ViewModel.showPopUp1 == true{
                 VStack{
                     Text("Input Your Monthly Income Here")
@@ -26,7 +32,7 @@ struct MonthlyIncomeView: View {
                         .keyboardType(.numberPad)
                         .padding()
                         .frame(width: 250)
-                        .background(.yellow)
+                        .background(.quaternary)
                         .cornerRadius(20)
                     Spacer()
                         .frame(height: 50)
@@ -36,7 +42,7 @@ struct MonthlyIncomeView: View {
                         NavigationLink(("Skip"), destination: LimitExpensesView(ViewModel: ViewModel, onboard3: onboard2))
                             .padding()
                             .frame(width: 250)
-                            .background(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 ? Color.orange : Color.orange)
+                            .background(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 ? Color("Primary") : Color("Primary"))
                             .foregroundColor(.white)
                             .cornerRadius(20)
                     } else {
@@ -47,7 +53,7 @@ struct MonthlyIncomeView: View {
                         })
                         .padding()
                         .frame(width: 250)
-                        .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color.orange : Color.orange)
+                        .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color("Primary") : Color("Primary"))
                         .foregroundColor(.white)
                         .cornerRadius(20)
                     }
@@ -65,7 +71,7 @@ struct MonthlyIncomeView: View {
                         .keyboardType(.numberPad)
                         .padding()
                         .frame(width: 250)
-                        .background(.yellow)
+                        .background(.quaternary)
                         .cornerRadius(20)
                     Spacer()
                         .frame(height: 50)
@@ -75,7 +81,7 @@ struct MonthlyIncomeView: View {
                         NavigationLink(("Skip"), destination: LimitExpensesView(ViewModel: ViewModel, onboard3: onboard2))
                             .padding()
                             .frame(width: 250)
-                            .background(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 ? Color.orange : Color.orange)
+                            .background(ViewModel.monthlyIncome == nil || ViewModel.monthlyIncome == 0 ? Color("Primary") : Color("Primary"))
                             .foregroundColor(.white)
                             .cornerRadius(20)
                         
@@ -88,22 +94,26 @@ struct MonthlyIncomeView: View {
                         })
                         .padding()
                         .frame(width: 250)
-                        .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color.orange : Color.orange)
+                        .background((ViewModel.limitExpenses == 0 || ViewModel.limitExpenses == nil) ? Color("Primary") : Color("Primary"))
                         .foregroundColor(.white)
                         .cornerRadius(20)
                     }
                     
                 }.navigationTitle("Monthly Income")
             }
+                VStack{
             if ViewModel.showPopUp1 == true{
                     AlertMonthlyIncomeView(popUp1: ViewModel, onboard5: onboard2)
+            }
+                    Spacer()
+                        .frame(height: 75)
             }
         }
                             
             
      //   }.navigationBarHidden(true)
         
-        
+        }
         
     }
 }

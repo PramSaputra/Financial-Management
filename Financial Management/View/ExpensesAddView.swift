@@ -8,18 +8,28 @@
 import SwiftUI
 
 struct ExpensesAddView: View {
-    @StateObject var expenses1: ExpensesSaveViewModel
+    @ObservedObject var expenses1: ExpensesSaveViewModel
     @ObservedObject var yourOutcome: incomeModel
     @State var name = ""
     @State var type = "Food/Drinks"
     @State var amount : Int? = nil
     @State var alert = false
+//    @State var image : UIImage = [""]
     @Environment(\.dismiss) var dismiss
     
     let totalExpenses: Int
     
     let types = ["Food/Drinks", "Others"]
     
+//    init (expenses1:ExpensesSaveViewModel, yourOutcome: incomeModel, totalExpenses:Int){
+//        UINavigationBar().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.black)]
+//        self.expenses1 = expenses1
+//        self.yourOutcome = yourOutcome
+//        self.totalExpenses = totalExpenses
+//
+//    }
+    
+  
     var body: some View {
         NavigationView{
 //            ZStack{
@@ -29,16 +39,24 @@ struct ExpensesAddView: View {
 //                        .padding()
 //                }
 //            }
+            
             Form{
-                TextField("Input Your Expenses Here", text: $name)
+                Section{
+                    
+                }
+                TextField("Input Your Expenses Amount Here", value: $amount, format: .currency(code:Locale.current.currencyCode ?? "id_ID"))
+                    .keyboardType(.numberPad)
                 Picker("Category", selection: $type) {
                     ForEach(types, id: \.self) {
                         Text($0)
                     }
                 }
-                TextField("Input Your Expenses Amount Here", value: $amount, format: .currency(code:Locale.current.currencyCode ?? "id_ID"))
-                    .keyboardType(.numberPad)
-            }.navigationTitle("Add New Expenses")
+                Section{
+                    TextField("Add Additional Information Here", text: $name)
+                }
+            }
+            .navigationTitle("Add New Expenses")
+            
                 .navigationBarItems(leading:                     Button("Back"){
                     dismiss()
                 }, trailing: Button("Save"){
@@ -63,8 +81,9 @@ struct ExpensesAddView: View {
     }
 }
 
+
 struct ExpensesAddView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpensesAddView(expenses1: ExpensesSaveViewModel(), yourOutcome: incomeModel(), totalExpenses: 10)
+        ExpensesAddView(expenses1: ExpensesSaveViewModel(), yourOutcome: incomeModel(), totalExpenses: 0)
     }
 }
