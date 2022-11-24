@@ -13,5 +13,6 @@ struct ExpensesItemModel: Identifiable, Codable{
     let name : String
     let whatFor : String
     let expense : Int
+    let date : Date
 //    let image : UIImage
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A507D2F4292C75BA00FC2B30 /* MainViewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507D2F3292C75BA00FC2B30 /* MainViewSheet.swift */; };
 		A514CC3329025544000945B3 /* FirstViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A514CC3229025544000945B3 /* FirstViewModel.swift */; };
 		A514CC3529064464000945B3 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A514CC3429064464000945B3 /* FirstView.swift */; };
 		A514CC372907F409000945B3 /* AlertConfirmationLimitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A514CC362907F409000945B3 /* AlertConfirmationLimitView.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A507D2F3292C75BA00FC2B30 /* MainViewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewSheet.swift; sourceTree = "<group>"; };
 		A514CC3229025544000945B3 /* FirstViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewModel.swift; sourceTree = "<group>"; };
 		A514CC3429064464000945B3 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		A514CC362907F409000945B3 /* AlertConfirmationLimitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConfirmationLimitView.swift; sourceTree = "<group>"; };
@@ -64,6 +66,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A507D314292F2B4C00FC2B30 /* Adding */ = {
+			isa = PBXGroup;
+			children = (
+				A5E5924E28FF8DC60081F937 /* ExpensesAddView.swift */,
+				A514CC3829097CF4000945B3 /* AdditionalLimitView.swift */,
+			);
+			path = Adding;
+			sourceTree = "<group>";
+		};
+		A507D315292F2B5800FC2B30 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A535CDD928EBEBC9000E6049 /* DashboardStartUpView.swift */,
+				A535CDEC28ED2129000E6049 /* MonthlyIncomeView.swift */,
+				A514CC3C290F856E000945B3 /* AlertMonthlyIncomeView.swift */,
+				A535CDEE28ED802A000E6049 /* LimitExpensesView.swift */,
+				A514CC362907F409000945B3 /* AlertConfirmationLimitView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		A514CC4029128978000945B3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +120,6 @@
 				A535CDF228EE97E8000E6049 /* View */,
 				A535CDF328EE9835000E6049 /* ViewModel */,
 				A535CDD728EBEBC9000E6049 /* Financial_ManagementApp.swift */,
-				A57686CF29247B1800A4C53B /* NavigationBarViewModel.swift */,
 				A535CDDB28EBEBC9000E6049 /* Assets.xcassets */,
 				A535CDE028EBEBC9000E6049 /* Persistence.swift */,
 				A535CDE228EBEBC9000E6049 /* Financial_Management.xcdatamodeld */,
@@ -118,15 +140,11 @@
 			isa = PBXGroup;
 			children = (
 				A514CC3429064464000945B3 /* FirstView.swift */,
-				A535CDD928EBEBC9000E6049 /* DashboardStartUpView.swift */,
-				A535CDEC28ED2129000E6049 /* MonthlyIncomeView.swift */,
-				A514CC3C290F856E000945B3 /* AlertMonthlyIncomeView.swift */,
-				A535CDEE28ED802A000E6049 /* LimitExpensesView.swift */,
-				A514CC362907F409000945B3 /* AlertConfirmationLimitView.swift */,
+				A507D315292F2B5800FC2B30 /* Onboarding */,
+				A507D314292F2B4C00FC2B30 /* Adding */,
 				A5E5923628F464370081F937 /* MainView.swift */,
+				A507D2F3292C75BA00FC2B30 /* MainViewSheet.swift */,
 				A5E5924828FF88810081F937 /* ExpensesHistoryView.swift */,
-				A5E5924E28FF8DC60081F937 /* ExpensesAddView.swift */,
-				A514CC3829097CF4000945B3 /* AdditionalLimitView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				A5E5924C28FF8D380081F937 /* ExpenseSaveViewModel.swift */,
+				A57686CF29247B1800A4C53B /* NavigationBarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A535CDE128EBEBC9000E6049 /* Persistence.swift in Sources */,
+				A507D2F4292C75BA00FC2B30 /* MainViewSheet.swift in Sources */,
 				A5E5923728F464370081F937 /* MainView.swift in Sources */,
 				A57686D029247B1800A4C53B /* NavigationBarViewModel.swift in Sources */,
 				A535CDEF28ED802B000E6049 /* LimitExpensesView.swift in Sources */,
@@ -283,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -337,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -363,6 +383,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,6 +413,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

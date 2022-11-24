@@ -21,6 +21,8 @@ struct ExpensesAddView: View {
     
     let types = ["Food/Drinks", "Others"]
     
+    
+    
 //    init (expenses1:ExpensesSaveViewModel, yourOutcome: incomeModel, totalExpenses:Int){
 //        UINavigationBar().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.black)]
 //        self.expenses1 = expenses1
@@ -32,19 +34,11 @@ struct ExpensesAddView: View {
   
     var body: some View {
         NavigationView{
-//            ZStack{
-//                VStack{
-//                    Text("Input Your Expenses Here")
-//                    TextField("Your Expenses", text: $name)
-//                        .padding()
-//                }
-//            }
-            
             Form{
                 Section{
                     
                 }
-                TextField("Input Your Expenses Amount Here", value: $amount, format: .currency(code:Locale.current.currencyCode ?? "id_ID"))
+                TextField("Input Your Expenses Amount Here", value: $amount, format: .currency(code:Locale.current.currency?.identifier ?? "id_ID"))
                     .keyboardType(.numberPad)
                 Picker("Category", selection: $type) {
                     ForEach(types, id: \.self) {
@@ -57,7 +51,7 @@ struct ExpensesAddView: View {
             }
             .navigationTitle("Add New Expenses")
             
-                .navigationBarItems(leading:                     Button("Back"){
+                .navigationBarItems(leading: Button("Back"){
                     dismiss()
                 }, trailing: Button("Save"){
                     if amount ?? 0 == 0 || amount == nil{
@@ -65,7 +59,7 @@ struct ExpensesAddView: View {
                     }else if amount ?? 0 <= 0{
                         alert.toggle()
                     } else {
-                        let item = ExpensesItemModel(name: name, whatFor: type, expense: amount ?? 0)
+                        let item = ExpensesItemModel(name: name, whatFor: type, expense: amount ?? 0, date: Date())
                         expenses1.items.append(item)
                         print("2")
                         dismiss()

@@ -10,7 +10,7 @@ import SwiftUI
 struct AdditionalLimitView: View {
     @ObservedObject var income : incomeModel
     @State var money : Int?
-    @State var alert = false
+//    @State var alert = false
     @Environment(\.dismiss) var dismiss
     @State var totalLimit : Int?
     let currentMonthlyIncome : Int
@@ -85,16 +85,9 @@ struct AdditionalLimitView: View {
                     dismiss()
                     
                 }, trailing: Button("Save"){
-                    
-                    if totalLimit ?? 0 <= income.monthlyIncome ?? 0 || income.monthlyIncome == nil {
-                        dismiss()
-                        income.limitExpenses = totalLimit ?? 0
-                    } else {
-                        alert.toggle()
-                    }
-                }).alert(isPresented: $alert) {
-                    Alert(title: Text("Failed To Save"), message: Text("Your Limit Expenses Has Exceeded Your Monthly Income"), dismissButton: .default(Text("Close")))
-            }
+                    dismiss()
+                    income.limitExpenses = totalLimit ?? 0
+                })
         }
     }
 }
@@ -136,11 +129,13 @@ struct AdditionalIncomeView: View {
                         dismiss()
                         income.monthlyIncome = updatedIncome ?? 0
                     } else {
-                        alert.toggle()
+//                        alert.toggle()
+                        dismiss()
                     }
-                }).alert(isPresented: $alert) {
-                    Alert(title: Text("Failed To Save"), message: Text("Your Monthly Income Are Lower Than Your Limit Expenses"), dismissButton: .default(Text("Close")))
-            }
+                })
+//                .alert(isPresented: $alert) {
+//                    Alert(title: Text("Failed To Save"), message: Text("Your Monthly Income Are Lower Than Your Limit Expenses"), dismissButton: .default(Text("Close")))
+//            }
         }
     }
 }

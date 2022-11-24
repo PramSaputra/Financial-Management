@@ -31,9 +31,14 @@ struct ExpensesHistoryView: View {
                                 VStack(alignment: .leading){
                                     Text(item.name)
                                     Text(item.whatFor)
+                                    Text("\(item.date.formatted(date: .complete, time: .shortened))")
+                                        .foregroundColor(.secondary)
                                 }
                                 Spacer()
-                                Text("Rp \(item.expense)")
+                                VStack{
+                                    Text("Rp \(item.expense)")
+                                    Spacer()
+                                }
                             }
                         }
                         .onDelete(perform: removeItems)

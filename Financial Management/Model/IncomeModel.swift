@@ -18,4 +18,8 @@ class incomeModel: ObservableObject {
     @Published var showPopUp1 : Bool = false
     @Published var showPopUp2 : Bool = false
     @Published var zeroValue : Bool = false
+    @Published var updateLimit : Bool = false
+    @Published var updateMonthly : Bool = false
+    @Published var addExpenses : Bool = false
+    
 }
