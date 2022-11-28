@@ -16,11 +16,6 @@ struct MonthlyIncomeView: View {
         
         ZStack{
             ZStack {
-//                GeometryReader { reader in
-//                    Color("Primary")
-//                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
-//                        .ignoresSafeArea()
-//                }
             if ViewModel.showPopUp1 == true{
                 VStack{
                     Text("Input Your Monthly Income Here")
@@ -109,10 +104,6 @@ struct MonthlyIncomeView: View {
                         .frame(height: 75)
             }
         }
-                            
-            
-     //   }.navigationBarHidden(true)
-        
         }
         
     }

@@ -54,7 +54,7 @@ struct AlertMonthlyIncomeView: View{
                             }
                         }
                 }
-                .frame(width: 300, height: 160)
+                .frame(width: 300, height: 200)
                 .cornerRadius(20).shadow(radius: 20)
             }
         }

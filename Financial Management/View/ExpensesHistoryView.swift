@@ -12,46 +12,62 @@ struct ExpensesHistoryView: View {
     func removeItems(at offsets: IndexSet) {
         expenses.items.remove(atOffsets: offsets)
     }
-//        init (expenses : ExpensesSaveViewModel){
-//            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.black)]
-//            self.expenses = expenses
-//        }
-    
     var body: some View {
-//        NavigationView{
-//            ZStack{
-                Form{
-                    Section{
-                        
-                    }
-                    List{
-                        ForEach(expenses.items) {
-                            item in
-                            HStack{
-                                VStack(alignment: .leading){
-                                    Text(item.name)
-                                    Text(item.whatFor)
-                                    Text("\(item.date.formatted(date: .complete, time: .shortened))")
-                                        .foregroundColor(.secondary)
-                                }
+        Form{
+            Section{
+                
+            }
+            List{
+                ForEach(expenses.items) {
+                    item in
+                    HStack{
+                        if item.name == "" {
+                            VStack(alignment: .leading){
+                                //                                                Text(item.name)
+                                Text(item.whatFor)
+                                //                                                    .font(.callout)
+                                Text("\(item.date.formatted(date: .complete, time: .shortened))")
+                                    .foregroundColor(.secondary)
+                                    .font(.footnote)
+                                
                                 Spacer()
-                                VStack{
-                                    Text("Rp \(item.expense)")
-                                    Spacer()
-                                }
                             }
+                            Spacer()
+                            VStack{
+                                Text("Rp \(item.expense)")
+                                Spacer()
+                            }
+                        } else {
+                            VStack(alignment: .leading){
+                                Text(item.name)
+                                    .lineLimit(2)
+                                Text(item.whatFor)
+                                    .font(.footnote)
+                                    .foregroundColor(.secondary)
+                                    .lineLimit(2)
+                                Text("\(item.date.formatted(date: .complete, time: .shortened))")
+                                    .foregroundColor(.secondary)
+                                    .font(.footnote)
+                                    .lineLimit(2)
+                                Spacer()
+                            }
+                            Spacer()
+                            VStack{
+                                Text("Rp \(item.expense)")
+                                    .lineLimit(2)
+                                Spacer()
+                            }
+                            
                         }
-                        .onDelete(perform: removeItems)
                     }
                 }
-                .navigationTitle("Expenses History")
-                    .toolbar{
-                        EditButton()
-//                    }
-                    
+                .onDelete(perform: removeItems)
             }
-//        }
-//                    .navigationAppearance(backgroundColor: .systemBlue, foregroundColor: .systemRed)
+        }
+        .navigationTitle("Expenses History")
+        .toolbar{
+            EditButton()
+        }
     }
 }
 

@@ -30,10 +30,10 @@ struct MainView: View {
         let gauge = Double(total) / Double(limit)
         
         return Double(gauge)
-//        if total == 0 || limit == 0{
-//            return 0
-//        } else{
-//        }
+        //        if total == 0 || limit == 0{
+        //            return 0
+        //        } else{
+        //        }
     }
     
     var monthlySisa: Int{
@@ -69,268 +69,135 @@ struct MainView: View {
     var body: some View {
         NavigationView{
             ZStack {
-                //                GeometryReader { reader in
-                //                    Color("Primary")
-                //                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
-                //                        .ignoresSafeArea()
-                //                }
                 ScrollView {
-//                    ZStack{
-                        ZStack{
-                            VStack{
-                                ZStack{
-                                    VStack{
-                                        HStack{
-//                                            Spacer()
-//                                                .frame(width: 5)
-                                            Text("Your Current Money")
-                                                .padding()
-                                                .font(Font.title3.bold())
-                                                .frame(height: 20)
-                                            Spacer()
-                                        }
-                                        if uangSisa >= 999999999 || uangSisa <= -999999{
-                                            if uangSisa >= 0 {
-                                                HStack{
-                                                    Text("Left")
-                                                        .font(Font.body.bold())
-                                                        .padding()
-                                                        .frame(height: 35)
-                                                        .background(Color("Secondary"))
-                                                        .foregroundColor(.white)
-                                                        .overlay(
-                                                        RoundedRectangle(cornerRadius: 10)
-                                                            .stroke(.gray))
-                                                        .cornerRadius(10)
-                                                    Spacer()
-                                                        .frame(width: 30)
-                                                }
-                                            } else {
-                                                HStack{
-                                                    Spacer()
-                                                    Text("Over Spent")
-                                                        .font(Font.body.bold())
-                                                        .padding()
-                                                        .frame(height: 35)
-                                                        .background(Color("Red"))
-                                                        .foregroundColor(.white)
-                                                        .overlay(
-                                                        RoundedRectangle(cornerRadius: 10)
-                                                            .stroke(.gray))
-                                                        .cornerRadius(10)
-                                                    Spacer()
-                                                        .frame(width: 30)
-                                                }
-                                            }
-                                        }
-                                        
-                                        
-                                        HStack{
+                    ZStack{
+                        VStack{
+                            ZStack{
+                                VStack{
+                                    HStack{
+                                        Text("Your Current Money")
+                                            .foregroundColor(.white)
+                                            .padding()
+                                            .font(Font.title3.bold())
+                                            .frame(height: 10)
+                                        Spacer()
+                                        Button("Edit", action: {
+                                            updateAlert.toggle()
+                                        }).font(Font.body.bold())
+                                            .padding()
+                                            .background(Color("Secondary"))
+                                            .foregroundColor(.white)
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke(.gray))
+                                            .cornerRadius(10)
+                                        Spacer()
+                                            .frame(width: 15)
+                                    }
+                                    HStack{
                                             Text("Rp \(uangSisa)")
                                                 .font(Font.largeTitle.bold())
                                                 .padding()
                                                 .foregroundColor(.white)
                                                 .cornerRadius(10)
-//                                                .padding()
-                                                .frame(height: 50)
-                                            if uangSisa >= 999999999 || uangSisa <= -999999 {
-                                            } else{
-                                                if uangSisa >= 1 {
-                                                    Text("Left")
-                                                        .font(Font.body.bold())
-                                                        .padding()
-                                                        .frame(height: 35)
-                                                        .background(Color("Secondary"))
-                                                        .foregroundColor(.white)
-                                                        .overlay(
-                                                            RoundedRectangle(cornerRadius: 10)
-                                                                .stroke(.gray))
-                                                        .cornerRadius(10)
-                                                }else {
-                                                        Text("Over Spent")
-                                                        .font(Font.body.bold())
-                                                        .padding()
-                                                        .frame(height: 35)
-                                                        .background(Color("Red"))
-                                                        .foregroundColor(.white)
-                                                        .overlay(
-                                                            RoundedRectangle(cornerRadius: 10)
-                                                                .stroke(.gray))
-                                                        .cornerRadius(10)
-                                                }
-                                            }
+                                                .lineLimit(2)
+//                                            Spacer()
+                                        if uangSisa >= 0 || uangSisa == 0{
+                                            Text("Left")
+                                                .font(Font.body.bold())
+                                                .padding()
+//                                                .frame(width: 50,height: 35)
+//                                                .background(Color("Primary"))
+                                                .foregroundColor(.white)
+//                                                .overlay(
+//                                                    RoundedRectangle(cornerRadius: 10)
+//                                                        .stroke(.gray)
+//                                                )
+                                                .cornerRadius(10)
+                                            
+                                        Spacer()
                                             Spacer()
+                                                .frame(width: 15)
+                                        } else {
+                                            Text("Over Spent")
+                                                .font(Font.body.bold())
+                                                .padding()
+//                                                .background(Color("Red"))
+                                                .foregroundColor(.white)
+//                                                .overlay(
+//                                                    RoundedRectangle(cornerRadius: 10)
+//                                                        .stroke(.gray))
+                                                .cornerRadius(10)
+                                            Spacer()
+                                        }
+                                           
+                                        
+                                    }
+                                    
+                                    HStack{
+                                        if trueGauge >= 1 {
+                                            Gauge(value: trueGauge) {
+                                            }
+                                            .background(Color("Secondary"))
+                                            .cornerRadius(20)
+                                            .padding()
+                                            .frame(width: 400, height: 10)
+                                            .tint(Color("Red"))
+                                        }else{
+                                            Gauge(value: trueGauge) {
+                                            }
+                                            .background(Color("Secondary"))
+                                            .cornerRadius(20)
+                                            .padding()
+                                            .frame(width: 400, height: 10)
+                                            .tint(Color("Fourth"))
                                         }
                                         
-                                        HStack{
-                                            if trueGauge >= 1 {
-                                                Gauge(value: trueGauge) {
-                                                }
-    //                                            .scaleEffect(2)
-    //                                            .frame(height: 50)
-                                                .background(Color("Secondary"))
-                                                    .cornerRadius(20)
-                                                .padding()
-                                                .frame(width: 400, height: 10)
-    //                                            .padding()
-                                                .tint(Color("Red"))
-                                            }else{
-                                                Gauge(value: trueGauge) {
-                                                }
-    //                                            .scaleEffect(2)
-    //                                            .frame(height: 50)
-                                                .background(Color("Secondary"))
-                                                    .cornerRadius(20)
-                                                .padding()
-                                                .frame(width: 400, height: 10)
-    //                                            .padding()
-                                                .tint(Color("Fourth"))
-                                            }
-                                            
-                                        }
-                                        HStack{
-                                            Text("Rp \(totalExpenses) of Rp \(limitIncome) spent")
-                                                .font(.body)
-                                                .padding()
-                                                .foregroundColor(.white)
-                                                .cornerRadius(10)
-//                                                .padding()
-                                            Spacer()
-                                        }
-                                        Spacer()
-                                            .frame(height: 30)
                                     }
-                                }.background(Color("Primary"))
-//                                HStack{
-//                                    Text("Input Your Expenses here")
-//                                        .font(.title3)
-//                                        .padding()
-//                                        .cornerRadius(20)
-//                                    Spacer()
-//                                    Button {showingAddExpense = true
-//                                    }label:{
-//                                        Image(systemName: "plus.circle")
-//                                            .resizable()
-//                                            .scaledToFit()
-//                                            .frame(height: 30)
-//                                            .padding()
-//                                            .foregroundColor(Color("Fifth"))
-//                                    }
-//                                }
-                                HStack{
-                                    Text("Latest Expenses")
-                                        .font(Font.title.bold())
-                                        .padding()
-//                                        .foregroundColor(Color("Primary"))
-                                        .cornerRadius(10)
-                                    Spacer()
-                                    
-                                    //                                        .navigationAppearance(backgroundColor: .white, foregroundColor: .black, tintColor: .white, hideSeparator: false, hideNavbarBackground: true)
-                                }
-                                VStack{                                ForEach(expenses.items.reversed().prefix(5)) {
-                                    item in
                                     HStack{
-                                        if item.name == "" {
-                                            VStack(alignment: .leading){
-//                                                Text(item.name)
-                                                Text(item.whatFor)
-//                                                    .font(.callout)
-                                                Text("\(item.date.formatted(date: .complete, time: .shortened))")
-                                                    .foregroundColor(.secondary)
-                                                    .font(.footnote)
-                                            }
-                                            Spacer()
-                                            VStack{
-                                                Text("Rp \(item.expense)")
-                                                Spacer()
-                                            }
-                                        } else {
-                                            VStack(alignment: .leading){
-                                                Text(item.name)
-//                                                    .lineLimit(nil)
-                                                Text(item.whatFor)
-                                                    .font(.footnote)
-                                                    .foregroundColor(.secondary)
-                                                Text("\(item.date.formatted(date: .complete, time: .shortened))")
-                                                    .foregroundColor(.secondary)
-                                                    .font(.footnote)
-//                                                    .lineLimit(10)
-                                            }
-                                            Spacer()
-                                            VStack{
-                                                Text("Rp \(item.expense)")
-                                                Spacer()
-                                            }
-                                            
-                                        }
-                                    }
-                                    .padding()
-//                                        .background(.quaternary)
-//                                        .cornerRadius(10)
-//                                        .padding()
-//                                        .frame(height: 80)
-                                    
-                                    
-                                    Divider()
-                                        .background(.gray)
-                                }
-                                    NavigationLink(destination: ExpensesHistoryView(expenses: expenses)) {
-                                        Text("See More")
-                                            .padding()
-                                            .frame(width: 380)
-                                                .foregroundColor(Color("Fifth"))
-                                            .background(.quaternary)
+                                        Text("Rp \(totalExpenses) of Rp \(limitIncome) spent")
                                             .font(.body)
-
+                                            .padding()
+                                            .foregroundColor(.white)
+                                            .cornerRadius(10)
+                                        Spacer()
                                     }
-                                    
+                                    Spacer()
+                                        .frame(height: 30)
                                 }
-                                Spacer()
-                            }
-                            
-                            Spacer()
-                        }.navigationBarTitle(Text("Dashboard"))
-                            .navigationBarItems(trailing:
-                                                    Button(action: {
-                                updateAlert.toggle()
-                            },label:{
-                                Image(systemName: "plus.circle")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(height: 30)
-                                    .foregroundColor(.white)
+                            }.background(Color("Primary"))
+                            HStack{
+                                Text("Latest Expenses")
+                                    .font(Font.title.bold())
                                     .padding()
-                            }).sheet(isPresented: $updateAlert, onDismiss: {
-                                if sisaUang.updateLimit == true{
-                                    self.showingAdditionalLimit.toggle()
-                                    self.sisaUang.updateLimit.toggle()
-                                }; if sisaUang.updateMonthly == true{
-                                    self.showingAdditionalIncome.toggle()
-                                    self.sisaUang.updateMonthly.toggle()
-                                }; if sisaUang.addExpenses == true{
+                                    .cornerRadius(10)
+                                Spacer()
+                                Button(action: {
                                     self.showingAddExpense.toggle()
-                                    self.sisaUang.addExpenses.toggle()
+                                },label:{
+                                    Image(systemName: "plus.circle")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(height: 30)
+                                        .foregroundColor(Color("Fifth"))
+                                        .padding()
+                                }).sheet(isPresented: $updateAlert, onDismiss: {
+                                    if sisaUang.updateLimit == true{
+                                        self.showingAdditionalLimit.toggle()
+                                        self.sisaUang.updateLimit.toggle()
+                                    }; if sisaUang.updateMonthly == true{
+                                        self.showingAdditionalIncome.toggle()
+                                        self.sisaUang.updateMonthly.toggle()
+                                    }; if sisaUang.addExpenses == true{
+                                        self.showingAddExpense.toggle()
+                                        self.sisaUang.addExpenses.toggle()
+                                    }
+                                }){
+                                    MainViewSheet(yourOutcome: sisaUang)
+                                        .navigationAppearance(backgroundColor: .systemBackground, foregroundColor: UIColor.init(Color("Reversed")), tintColor: nil, hideSeparator: true, hideNavbarBackground: false)
+                                        .accentColor(Color("Fifth"))
+                                        .presentationDetents([.fraction(0.25)])
                                 }
-                            }){
-                                MainViewSheet(yourOutcome: sisaUang)
-                                    .navigationAppearance(backgroundColor: .systemBackground, foregroundColor: UIColor.init(Color("Reversed")), tintColor: nil, hideSeparator: true, hideNavbarBackground: false)
-                                    .accentColor(Color("Fifth"))
-                                    .presentationDetents([.fraction(0.4)])
-                            }
-//                                                        .alert("Choose What To Update", isPresented: $updateAlert) {
-//
-//                                Button("Update Monthly Income") {
-//                                    showingAdditionalIncome.toggle()
-//                                    dismiss()
-//                                }
-//                                Button("Update Limit Expenses") {
-//                                    showingAdditionalLimit.toggle()
-//                                    dismiss()
-//                                }
-//                                Button("Cancel") {
-//                                    dismiss()
-//                                }
-//                            }
                                 .sheet(isPresented: $showingAdditionalLimit){
                                     AdditionalLimitView(income: sisaUang, currentMonthlyIncome: monthlySisa)
                                         .accentColor(Color("Fifth"))
@@ -349,9 +216,67 @@ struct MainView: View {
                                     ExpensesAddView(expenses1: expenses, yourOutcome: sisaUang, totalExpenses: totalExpenses)
                                         .accentColor(Color("Fifth"))
                                         .navigationAppearance(backgroundColor: .systemBackground, foregroundColor: UIColor.init(Color("Reversed")), tintColor: nil, hideSeparator: true, hideNavbarBackground: false)
+                                    
+                                }
+                            }
+                            VStack{                                ForEach(expenses.items.reversed().prefix(5)) {
+                                item in
+                                HStack{
+                                    if item.name == "" {
+                                        VStack(alignment: .leading){
+                                            Text(item.whatFor)
+                                            Text("\(item.date.formatted(date: .complete, time: .shortened))")
+                                                .foregroundColor(.secondary)
+                                                .font(.footnote)
+                                        }
+                                        Spacer()
+                                        VStack{
+                                            Text("Rp \(item.expense)")
+                                            Spacer()
+                                        }
+                                    } else {
+                                        VStack(alignment: .leading){
+                                            Text(item.name)
+                                                .lineLimit(2)
+                                            Text(item.whatFor)
+                                                .font(.footnote)
+                                                .foregroundColor(.secondary)
+                                                .lineLimit(2)
+                                            Text("\(item.date.formatted(date: .complete, time: .shortened))")
+                                                .foregroundColor(.secondary)
+                                                .font(.footnote)
+                                                .lineLimit(2)
+                                        }
+                                        Spacer()
+                                        VStack{
+                                            Text("Rp \(item.expense)")
+                                                .lineLimit(2)
+                                            Spacer()
+                                        }
                                         
-                                })
-//                    }
+                                    }
+                                }
+                                .padding()
+                                Divider()
+                                    .background(.gray)
+                            }
+                                NavigationLink(destination: ExpensesHistoryView(expenses: expenses)) {
+                                    Text("See More")
+                                        .padding()
+                                        .frame(width: 380)
+                                        .foregroundColor(Color("Fifth"))
+                                        .font(.body)
+                                    
+                                }
+                                
+                            }
+                            Spacer()
+                        }
+                        
+                        Spacer()
+                    }.navigationBarTitle(Text("Dashboard"))
+                    
+                    //                    }
                 }
                 .alert(isPresented: $limitAlert) {
                     Alert(title: Text("Over Spent"), message: Text("It Seems You Have Been Over Spent Your Current Limit Budget"), dismissButton: .default(Text("Close")))

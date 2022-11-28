@@ -81,7 +81,7 @@ struct AdditionalLimitView: View {
                 }
                 
             }.navigationTitle("Your Limit Expenses")
-                .navigationBarItems(leading:                     Button("Back"){
+                .navigationBarItems(leading: Button("Back"){
                     dismiss()
                     
                 }, trailing: Button("Save"){
@@ -97,12 +97,6 @@ struct AdditionalIncomeView: View {
     @State var updatedIncome : Int?
     @State var alert = false
     @Environment(\.dismiss) var dismiss
-    
-//    init (income: incomeModel){
-//        UINavigationBar().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.red)]
-//        self.income = income
-//    }
-    
     var body: some View {
         NavigationView{
             Form{
@@ -120,7 +114,7 @@ struct AdditionalIncomeView: View {
                     .font(.footnote)
                 
             }.navigationTitle("Your Monthly Income")
-                .navigationBarItems(leading:                     Button("Back"){
+                .navigationBarItems(leading: Button("Back"){
                     dismiss()
                     
                 }, trailing: Button("Save"){
@@ -129,13 +123,9 @@ struct AdditionalIncomeView: View {
                         dismiss()
                         income.monthlyIncome = updatedIncome ?? 0
                     } else {
-//                        alert.toggle()
                         dismiss()
                     }
                 })
-//                .alert(isPresented: $alert) {
-//                    Alert(title: Text("Failed To Save"), message: Text("Your Monthly Income Are Lower Than Your Limit Expenses"), dismissButton: .default(Text("Close")))
-//            }
         }
     }
 }

@@ -18,11 +18,6 @@ struct LimitExpensesView: View {
    //     NavigationView{
         ZStack{
             ZStack {
-//                GeometryReader { reader in
-//                    Color("Primary")
-//                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
-//                        .ignoresSafeArea()
-//                }
             if ViewModel.showPopUp2 == true{
             VStack{
                 Text("Set Your Monthly Limit Expenses Here")
@@ -37,60 +32,16 @@ struct LimitExpensesView: View {
                     .frame(width: 250)
                     .background(.quaternary)
                     .cornerRadius(20)
-//                    .onAppear{
-//                        let limitExpensesPercent = limit
-//                        let income = ViewModel.monthlyIncome
-//                        let limit = ViewModel.limitExpenses
-//
-//                        let trueLimit = (limit ?? 0)
-//
-//                        let limitedExpenses = (income ?? 0) / 100 * (limitExpensesPercent )
-//
-//
-//                        if income == nil || income == 0{
-//                            self.ViewModel.limitExpenses = trueLimit;
-//                            self.ViewModel.showPopUp1 = false
-//                            print("sukses 1")
-//                        }
-//                        else {
-//                            self.ViewModel.limitExpenses = limitedExpenses;
-//                            self.ViewModel.showPopUp1 = false
-//                            print("gagal 1")
-//                        }
-//                    }
                 
                 Text("Recomendation")
                 
                 Picker("Select Your Limit", selection: $limit) {
-                    ForEach(limitPercentage, id: \.self){                        Text("Limit \($0)% of Your Income")
+                    ForEach(limitPercentage, id: \.self){                        Text(" \($0)%")
                     }
                 }
                 .pickerStyle(.segmented)
-//                .background(Color("Third"))
-//                    .onChange(of: limit, perform: { (value) in
-//                        let limitExpensesPercent = limit
-//                        let income = ViewModel.monthlyIncome
-//                        let limit = ViewModel.limitExpenses
-//
-//                        let trueLimit = (income ?? 1) * (limit ?? 3)
-//
-//                        let limitedExpenses = (income ?? 0) / 100 * (limitExpensesPercent )
-//
-//
-//                        if income == nil || income == 0{
-//                            self.ViewModel.limitExpenses = trueLimit;
-//                            self.ViewModel.showPopUp1 = false
-//                            print("sukses 2")
-//                        }
-//                        else {
-//                            self.ViewModel.limitExpenses = limitedExpenses;
-//                            self.ViewModel.showPopUp1 = false
-//                            print("gagal 2")
-//                        }
-//                    })
-               
+                
                 Group{
-                    
                     if onboard3.onboard == false {
                         Button("Confirm", action: {
                             ViewModel.showPopUp2.toggle()

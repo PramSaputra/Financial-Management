@@ -50,8 +50,11 @@ struct DashboardStartUpView: View {
     }
 }
 
-//struct DashboardStartUpView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DashboardStartUpView(onboard1: FirstViewModel(), incomeViewModel: incomeModel())
-//    }
-//}
+struct DashboardStartUpView_Previews: PreviewProvider {
+    static var previews: some View {
+        DashboardStartUpView(onboard1: FirstViewModel(), incomeViewModel: incomeModel())
+            .environment(\.locale, .init(identifier: "id"))
+        
+        DashboardStartUpView(onboard1: FirstViewModel(), incomeViewModel: incomeModel())
+    }
+}

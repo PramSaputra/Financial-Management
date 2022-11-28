@@ -12,7 +12,6 @@ struct AlertConfirmationLimitView: View {
     @ObservedObject var onboard4 : FirstViewModel
     var body: some View {
         ZStack{
-//            NavigationLink("", destination: MainView(sisaUang: popUp, currentIncome: popUp.monthlyIncome, limitIncome: popUp.limitExpenses), isActive: $onboard4.onboard)
             if popUp2.showPopUp2{
                 ZStack {
                     Color.white

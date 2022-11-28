@@ -23,15 +23,8 @@ struct MainViewSheet: View {
                     }
                     .padding()
                         .foregroundColor(Color("Fifth"))
-//                        .background(Color("Primary"))
-//                        .cornerRadius(20)
                     Divider()
                         .background(.gray)
-//                    HStack{
-//                        Spacer()
-//
-//                    }
-                    
                         Button("Your Monthly Income") {
                             withAnimation{
                                 yourOutcome.updateMonthly.toggle()
@@ -40,29 +33,8 @@ struct MainViewSheet: View {
                         }
                         .padding()
                             .foregroundColor(Color("Fifth"))
-    //                        .background(Color("Primary"))
-    //                        .cornerRadius(20)
                         Divider()
                         .background(.gray)
-//                        Spacer()
-//                    HStack{
-//                    }
-                    
-                        Button("New Expenses") {
-                            withAnimation{
-                                yourOutcome.addExpenses.toggle()
-                                dismiss()
-                            }
-                        }
-                        .padding()
-                            .foregroundColor(Color("Fifth"))
-        //                    .background(Color("Primary"))
-    //                        .cornerRadius(20)
-                        Divider()
-                        .background(.gray)
-//                    HStack{
-//                        Spacer()
-//                    }
                     
                 }
             }
