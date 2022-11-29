@@ -1,0 +1,54 @@
+/* 
+  Localizable-ID.strings
+  Financial Management
+
+  Created by Pramudya Prameswara Trisna Saputra on 25/11/22.
+  
+*/
+
+"Start your budgeting now" = "Start your budgeting now?";
+//"Input Your Monthly Income Here" = "Input Your Monthly Income Here"
+//"Skip" = "Skip"
+//"Let's Get Started" = "Let's Get Started"
+//"Dashboard" = "Dashboard"
+//"Confirm" = "Confirm"
+//"Monthly Income" = "Monthly Income"
+//"Double Check Your Monthly Income" = "Double Check Your Monthly Income"
+//"Your Monthly Income are" = "Your Monthly Income are"
+//"Close" = "Close"
+//"Set Your Monthly Limit Expenses Here" = "Set Your Monthly Limit Expenses Here"
+//"Your Monthly Income are Rp" = "Your Monthly Income are Rp"
+//"Recomendation" = "Recomendation"
+//"Select Your Limit" = "Select Your Limit"
+//"Limit" = "Limit"
+//"% of Your Income" = "% of Your Income"
+//"Double Check Your Monthly Expenses" = "Double Check Your Monthly Expenses"
+//"Your Limit Expenses are" = "Your Limit Expenses are"
+//"Your Current Money" = "Your Current Money"
+//"Edit" = "Edit"
+//"Left" = "Left"
+//"Over Spent" = "Over Spent"
+//"of" = "of"
+//"spent" = "spent"
+//"Latest Expenses" = "Latest Expenses"
+//"See More" = "See More"
+//"It Seems You Have Been Over Spent Your Current Limit Budget" = "It Seems You Have Been Over Spent Your Current Limit Budget"
+//"Your Limit Expenses" = "Your Limit Expenses"
+//"Your Monthly Income" = "Your Monthly Income"
+//"What do you want to update?" = "What do you want to update?"
+//"Expenses History" = "Expenses History"
+//"Input Your Expenses Amount Here" = "Input Your Expenses Amount Here"
+//"Category" = "Category"
+//"Add Additional Information Here" = "Add Additional Information Here"
+//"Add New Expenses" = "Add New Expenses"
+//"Save" = "Save"
+//"Failed To Save" = "Failed To Save"
+//"Your Expenses Amount Are Empty" = "Your Expenses Amount Are Empty"
+//"You Can't Input a Minus Expenses Inside Your Expenses!" = "You Can't Input a Minus Expenses Inside Your Expenses!"
+//"Your Starting Monthly Income are" = "Your Starting Monthly Income are"
+//"Input Your Total Limit Expenses" = "Input Your Total Limit Expenses"
+//"Input Your Additional Limit Expenses" = "Input Your Additional Limit Expenses"
+//"Update Your Limit Expenses Here" = "Update Your Limit Expenses Here"
+//"Your Current Monthly Income are" = "Your Current Monthly Income are"
+//"Update Your Monthly Income Here" = "Update Your Monthly Income Here"
+

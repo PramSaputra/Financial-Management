@@ -16,6 +16,7 @@ struct ExpensesAddView: View {
     @State var alert = false
     //    @State var image : UIImage = [""]
     @Environment(\.dismiss) var dismiss
+    @FocusState var buttonDone: Bool
     
     let totalExpenses: Int
     
@@ -30,16 +31,25 @@ struct ExpensesAddView: View {
                 }
                 TextField("Input Your Expenses Amount Here", value: $amount, format: .currency(code:Locale.current.currency?.identifier ?? "id_ID"))
                     .keyboardType(.numberPad)
+                    .focused($buttonDone)
                 Picker("Category", selection: $type) {
                     ForEach(types, id: \.self) {
-                        Text($0)
+                        Text(LocalizedStringKey($0))
                     }
                 }
                 Section{
                     TextField("Add Additional Information Here", text: $name)
+                        .focused($buttonDone)
                 }
-            }
-            .navigationTitle("Add New Expenses")
+            }.navigationTitle("Add New Expenses")
+                .toolbar{
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            buttonDone = false
+                        }.foregroundColor(.blue)
+                    }
+                }
             
             .navigationBarItems(leading: Button("Back"){
                 dismiss()

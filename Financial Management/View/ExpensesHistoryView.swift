@@ -14,9 +14,7 @@ struct ExpensesHistoryView: View {
     }
     var body: some View {
         Form{
-            Section{
-                
-            }
+            Section{}
             List{
                 ForEach(expenses.items) {
                     item in
@@ -24,7 +22,7 @@ struct ExpensesHistoryView: View {
                         if item.name == "" {
                             VStack(alignment: .leading){
                                 //                                                Text(item.name)
-                                Text(item.whatFor)
+                                Text(LocalizedStringKey(item.whatFor))
                                 //                                                    .font(.callout)
                                 Text("\(item.date.formatted(date: .complete, time: .shortened))")
                                     .foregroundColor(.secondary)
@@ -41,7 +39,7 @@ struct ExpensesHistoryView: View {
                             VStack(alignment: .leading){
                                 Text(item.name)
                                     .lineLimit(2)
-                                Text(item.whatFor)
+                                Text(LocalizedStringKey(item.whatFor))
                                     .font(.footnote)
                                     .foregroundColor(.secondary)
                                     .lineLimit(2)

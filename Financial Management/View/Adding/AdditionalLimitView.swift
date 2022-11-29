@@ -10,16 +10,10 @@ import SwiftUI
 struct AdditionalLimitView: View {
     @ObservedObject var income : incomeModel
     @State var money : Int?
-//    @State var alert = false
     @Environment(\.dismiss) var dismiss
     @State var totalLimit : Int?
     let currentMonthlyIncome : Int
-    
-//    init (income: incomeModel, currentMonthlyIncome: Int){
-//        UINavigationBar().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.red)]
-//        self.income = income
-//        self.currentMonthlyIncome = currentMonthlyIncome
-//    }
+    @FocusState var buttonDone: Bool
     
     var body: some View {
         NavigationView{
@@ -35,6 +29,7 @@ struct AdditionalLimitView: View {
                 Section{
                     TextField("Input Your Total Limit Expenses", value: $totalLimit, format:.currency(code: Locale.current.currencyCode ?? "id_ID"))
                         .keyboardType(.numberPad)
+                        .focused($buttonDone)
                         .padding()
                         .frame(width: 320)
                         .background(.bar)
@@ -63,16 +58,23 @@ struct AdditionalLimitView: View {
                             
                             self.totalLimit = trueLimit
                         })
+
+                    Text("Update Your Limit Expenses Here")
+                        .font(.footnote)
+                }
+                Section{
                     
                     TextField("Input Your Additional Limit Expenses", value: $money, format:.currency(code: Locale.current.currencyCode ?? "id_ID"))
                         .keyboardType(.numberPad)
+                        .focused($buttonDone)
                         .padding()
                         .frame(width: 320)
                         .background(.bar)
                         .cornerRadius(20)
                     
-                    Text("Update Your Limit Expenses Here")
+                    Text("Add Number Manually To Update Your Limit Expenses")
                         .font(.footnote)
+                    
                 }
                 HStack{
                     Text("Your Current Monthly Income are")
@@ -81,6 +83,14 @@ struct AdditionalLimitView: View {
                 }
                 
             }.navigationTitle("Your Limit Expenses")
+                .toolbar{
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            buttonDone = false
+                        }.foregroundColor(.blue)
+                    }
+                }
                 .navigationBarItems(leading: Button("Back"){
                     dismiss()
                     
@@ -97,6 +107,7 @@ struct AdditionalIncomeView: View {
     @State var updatedIncome : Int?
     @State var alert = false
     @Environment(\.dismiss) var dismiss
+    @FocusState var buttonDone: Bool
     var body: some View {
         NavigationView{
             Form{
@@ -106,6 +117,7 @@ struct AdditionalIncomeView: View {
                 Text("Your Limit Expenses are \(income.limitExpenses ?? 0)")
                 TextField("\(income.monthlyIncome ?? 0)", value: $updatedIncome, format:.currency(code: Locale.current.currencyCode ?? "id_ID"))
                     .keyboardType(.numberPad)
+                    .focused($buttonDone)
                     .padding()
                     .frame(width: 320)
                     .background(.bar)
@@ -114,6 +126,14 @@ struct AdditionalIncomeView: View {
                     .font(.footnote)
                 
             }.navigationTitle("Your Monthly Income")
+                .toolbar{
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Done") {
+                            buttonDone = false
+                        }.foregroundColor(.blue)
+                    }
+                }
                 .navigationBarItems(leading: Button("Back"){
                     dismiss()
                     

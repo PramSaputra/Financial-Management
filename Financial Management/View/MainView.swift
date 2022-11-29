@@ -224,7 +224,7 @@ struct MainView: View {
                                 HStack{
                                     if item.name == "" {
                                         VStack(alignment: .leading){
-                                            Text(item.whatFor)
+                                            Text(LocalizedStringKey(item.whatFor))
                                             Text("\(item.date.formatted(date: .complete, time: .shortened))")
                                                 .foregroundColor(.secondary)
                                                 .font(.footnote)
@@ -236,9 +236,9 @@ struct MainView: View {
                                         }
                                     } else {
                                         VStack(alignment: .leading){
-                                            Text(item.name)
+                                            Text((item.name))
                                                 .lineLimit(2)
-                                            Text(item.whatFor)
+                                            Text(LocalizedStringKey(item.whatFor))
                                                 .font(.footnote)
                                                 .foregroundColor(.secondary)
                                                 .lineLimit(2)
@@ -275,8 +275,6 @@ struct MainView: View {
                         
                         Spacer()
                     }.navigationBarTitle(Text("Dashboard"))
-                    
-                    //                    }
                 }
                 .alert(isPresented: $limitAlert) {
                     Alert(title: Text("Over Spent"), message: Text("It Seems You Have Been Over Spent Your Current Limit Budget"), dismissButton: .default(Text("Close")))

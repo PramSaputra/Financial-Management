@@ -1,0 +1,134 @@
+/* No comment provided by engineer. */
+"Add Additional Information Here" = "Tambahkan Info Tambahan Disini";
+
+/* No comment provided by engineer. */
+"Add New Expenses" = "Pengeluaran Baru";
+
+/* No comment provided by engineer. */
+"Back" = "Kembali";
+
+/* No comment provided by engineer. */
+"Category" = "Kategori";
+
+/* No comment provided by engineer. */
+"Close" = "Tutup";
+
+/* No comment provided by engineer. */
+"Confirm" = "Konfirmasi";
+
+/* No comment provided by engineer. */
+"Double Check Your Monthly Expenses" = "Cek Kembali Pengeluaran Bulanan Anda";
+
+/* No comment provided by engineer. */
+"Double Check Your Monthly Income" = "Cek Kembali Pendapatan Bulanan Anda";
+
+/* No comment provided by engineer. */
+"Edit" = "Ubah";
+
+/* No comment provided by engineer. */
+"Expenses History" = "Histori Pengeluaran";
+
+/* No comment provided by engineer. */
+"Failed To Save" = "Gagal Menyimpan";
+
+/* No comment provided by engineer. */
+"Input Your Additional Limit Expenses" = "Tambahan Batas Pengeluaran";
+
+/* No comment provided by engineer. */
+"Input Your Expenses Amount Here" = "Jumlah Pengeluaran Anda";
+
+/* No comment provided by engineer. */
+"Input Your Monthly Income Here" = "Masukkan Pendapatan Bulanan Anda Disini";
+
+/* No comment provided by engineer. */
+"Input Your Total Limit Expenses" = "Total Batas Pengeluaran";
+
+/* No comment provided by engineer. */
+"It Seems You Have Been Over Spent Your Current Limit Budget" = "Sepertinya Anda Telah Melewati Batas Pengeluaran Anda Bulan Ini";
+
+/* No comment provided by engineer. */
+"Latest Expenses" = "Pengeluaran Terbaru";
+
+/* No comment provided by engineer. */
+"Left" = "Tersisa";
+
+/* No comment provided by engineer. */
+"Let's Get Started" = "Ayok Kita Mulai";
+
+/* No comment provided by engineer. */
+"Limit Expenses" = "Batas Pengeluaran";
+
+/* No comment provided by engineer. */
+"Monthly Income" = "Pendapatan Bulanan";
+
+/* No comment provided by engineer. */
+"Over Spent" = "Kelebihan";
+
+/* No comment provided by engineer. */
+"Recomendation" = "Rekomendasi";
+
+/* No comment provided by engineer. */
+"Rp %lld of Rp %lld spent" = "Menghabiskan Rp %lld Dari Rp %lld";
+
+/* No comment provided by engineer. */
+"Save" = "Menyimpan";
+
+/* No comment provided by engineer. */
+"See More" = "Lihat Semua";
+
+/* No comment provided by engineer. */
+"Select Your Limit" = "";
+
+/* No comment provided by engineer. */
+"Set Your Monthly Limit Expenses Here" = "Atur Batas Pengeluaran Anda Disini";
+
+/* No comment provided by engineer. */
+"Skip" = "Lewati";
+
+/* No comment provided by engineer. */
+"Start your budgeting now" = "Ayok Memulai Penganggaran Anda Sekarang";
+
+/* No comment provided by engineer. */
+"Update Your Limit Expenses Here" = "Perbarui Batas Pengeluaran Anda Disini";
+
+/* No comment provided by engineer. */
+"Update Your Monthly Income Here" = "Perbarui Pendapatan Bulanan Anda Disini";
+
+/* No comment provided by engineer. */
+"What do you want to update?" = "Apa Yang Anda Ingin Perbarui?";
+
+/* No comment provided by engineer. */
+"You Can't Input a Minus Expenses Inside Your Expenses!" = "Anda Tidak Bisa Memasukkan Pengeluaran Minus Dalam Pengeluaran Anda";
+
+/* No comment provided by engineer. */
+"Your Current Money" = "Uang Anda Saat Ini";
+
+/* No comment provided by engineer. */
+"Your Current Monthly Income are" = "Pendapatan Bulanan Anda Saat Ini Adalah";
+
+/* No comment provided by engineer. */
+"Your Expenses Amount Are Empty" = "Pengeluaran Anda Kosong";
+
+/* No comment provided by engineer. */
+"Your Limit Expenses" = "Batas Pengeluaran";
+
+/* No comment provided by engineer. */
+"Your Limit Expenses are %lld" = "Batas Pengeluaran Anda Adalah %lld";
+
+/* No comment provided by engineer. */
+"Your Monthly Income" = "Pendapatan Bulanan";
+
+/* No comment provided by engineer. */
+"Your Monthly Income are %lld" = "Pendapatan Bulanan Anda Adalah %lld";
+
+/* No comment provided by engineer. */
+"Your Monthly Income are Rp %lld" = "Pendapatan Bulanan Anda Adalah %lld";
+
+/* No comment provided by engineer. */
+"Your Starting Monthly Income are" = "Pendapatan Awal Bulanan Anda Adalah";
+
+"Food/Drinks" = "Makanan/Minuman";
+
+"Others" = "Lainnya";
+
+"Add Number Manually To Update Your Limit Expenses" = "Tambahkan Secara Manual Untuk Memperbarui Batas Pengeluaran";
