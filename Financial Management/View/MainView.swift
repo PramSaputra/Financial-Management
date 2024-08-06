@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    //    @AppStorage("Za Warudo") var onboarding = true
+        @AppStorage("Za Warudo") var onboarding = true
     @ObservedObject var sisaUang : incomeModel
     @StateObject var expenses = ExpensesSaveViewModel()
     @State var updateAlert = false
@@ -237,7 +237,7 @@ struct MainView: View {
                                     } else {
                                         VStack(alignment: .leading){
                                             Text((item.name))
-                                                .lineLimit(2)
+                                                .lineLimit(10)
                                             Text(LocalizedStringKey(item.whatFor))
                                                 .font(.footnote)
                                                 .foregroundColor(.secondary)

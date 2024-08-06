@@ -14,7 +14,9 @@ struct ExpensesHistoryView: View {
     }
     var body: some View {
         Form{
-            Section{}
+            Section{
+                
+            }
             List{
                 ForEach(expenses.items) {
                     item in

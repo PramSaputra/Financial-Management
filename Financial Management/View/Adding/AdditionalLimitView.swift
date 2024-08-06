@@ -27,7 +27,7 @@ struct AdditionalLimitView: View {
                     Text("\(income.monthlyIncome ?? 0)")
                 }
                 Section{
-                    TextField("Input Your Total Limit Expenses", value: $totalLimit, format:.currency(code: Locale.current.currencyCode ?? "id_ID"))
+                    TextField("Input Your Total Limit Expenses", value: $totalLimit, format:.currency(code: Locale.current.currency?.identifier ?? "id_ID"))
                         .keyboardType(.numberPad)
                         .focused($buttonDone)
                         .padding()

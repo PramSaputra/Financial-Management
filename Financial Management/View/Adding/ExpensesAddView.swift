@@ -26,9 +26,6 @@ struct ExpensesAddView: View {
     var body: some View {
         NavigationView{
             Form{
-                Section{
-                    
-                }
                 TextField("Input Your Expenses Amount Here", value: $amount, format: .currency(code:Locale.current.currency?.identifier ?? "id_ID"))
                     .keyboardType(.numberPad)
                     .focused($buttonDone)

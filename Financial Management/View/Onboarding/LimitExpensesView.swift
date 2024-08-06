@@ -42,7 +42,7 @@ struct LimitExpensesView: View {
                     Picker("Select Your Limit", selection: $limit) {
                         ForEach(limitPercentage, id: \.self){                        Text(" \($0)%")
                         }
-                    }
+                    }.padding()
                     .pickerStyle(.segmented)
                     
                     Group{
@@ -108,7 +108,7 @@ struct LimitExpensesView: View {
                             ForEach(limitPercentage, id: \.self){                        Text(" \($0)% ")
                             }
                         }
-                    }
+                    }.padding()
                     .pickerStyle(.segmented)
                     //                    .background(Color("Third"))
                     
